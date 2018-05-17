@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.order.locator.domain.OrdLocation;
+import com.order.locator.domain.OrderDetails;
 import com.order.locator.domain.ServiceResponse;
 import com.order.locator.service.OrdLocService;
 
@@ -48,4 +49,8 @@ public class OrderController {
 		return response;
 	}
 	
+	@RequestMapping("/getOrderData")
+	public OrderDetails getOrderData(@RequestParam("orderid") String orderId) {
+		return ordLocService.getOrderDetails(orderId);
+	}
 }
