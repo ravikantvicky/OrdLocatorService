@@ -57,4 +57,9 @@ public class OrdLocService {
 		
 		return order;
 	}
+	
+	public OrdLocation getCurrentLocation(String orderId) {
+		OrdLocation res = ordLocRepository.findTop1ByOrderIdOrderByIdDesc(orderId);
+		return res;
+	}
 }

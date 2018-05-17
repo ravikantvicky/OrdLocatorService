@@ -11,6 +11,6 @@ import com.order.locator.domain.OrdLocation;
 public interface OrdLocRepository extends JpaRepository<OrdLocation, Long> {
 
 	List<OrdLocation> findAllByOrderId(String orderId);
-	//List<OrdLocation> findTop1ByOrderByIdDesc()
+	OrdLocation findTop1ByOrderIdOrderByIdDesc(String orderId);
 
 }

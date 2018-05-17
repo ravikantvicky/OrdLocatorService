@@ -55,4 +55,9 @@ public class OrderController {
 	public OrderDetails getOrderData(@RequestParam("orderid") String orderId) {
 		return ordLocService.getOrderDetails(orderId);
 	}
+	
+	@RequestMapping("/getCurLoc")
+	public OrdLocation getCurLoc(@RequestParam("orderid") String orderId) {
+		return ordLocService.getCurrentLocation(orderId);
+	}
 }
