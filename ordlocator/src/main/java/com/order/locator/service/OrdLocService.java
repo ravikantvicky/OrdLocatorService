@@ -55,6 +55,10 @@ public class OrdLocService {
 			orderDetailsRepository.save(order);
 		}
 		
+		OrdLocation loc = ordLocRepository.findTop1ByOrderIdOrderByIdAsc(orderId);
+		if (loc != null) {
+			order.setSource(loc.getLattitude()+","+loc.getLongitude());
+		}
 		return order;
 	}
 	
