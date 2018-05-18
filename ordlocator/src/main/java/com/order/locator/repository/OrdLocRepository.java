@@ -12,5 +12,6 @@ public interface OrdLocRepository extends JpaRepository<OrdLocation, Long> {
 
 	List<OrdLocation> findAllByOrderId(String orderId);
 	OrdLocation findTop1ByOrderIdOrderByIdDesc(String orderId);
+	OrdLocation findTop1ByOrderIdOrderByIdAsc(String orderId);
 
 }
